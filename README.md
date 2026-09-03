@@ -17,8 +17,8 @@
 | **Official Website** | [https://ziurodb.com](https://ziurodb.com) | Official landing page, features overview, and ecosystem portal |
 | **ZiuroDB Lite (Web App)** | [https://lite.ziurodb.com](https://lite.ziurodb.com) | Zero-installation online web client running directly in your browser |
 | **Official Documentation** | [https://docs.ziurodb.com](https://docs.ziurodb.com) | Complete user guides, API references, ZQL specifications, and tutorials |
-| **GitHub Releases** | [GitHub Releases](https://github.com/shanikumar001/ziurodb-desktop/releases) | Official desktop binary downloads for macOS, Windows, and Linux |
-| **Core Engine Repo** | [https://github.com/shanikumar001/ziurodb](https://github.com/shanikumar001/ziurodb) | Core full-stack repository, backend services, and CLI tools |
+| **GitHub Releases** | [GitHub Releases](https://github.com/shanikumar001/ziurodb/releases) | Official desktop binary downloads for macOS, Windows, and Linux |
+| **Core Engine Repo** | [https://github.com/shanikumar001/ziurodb-dev](https://github.com/shanikumar001/ziurodb-dev) | Core full-stack repository, backend services, and CLI tools |
 
 ---
 
@@ -110,16 +110,16 @@ ZiuroDB Desktop binaries are available for all major operating systems. Download
 
 | Operating System | Architecture | Package Format | Direct Download Link |
 | :--- | :--- | :--- | :--- |
-| **macOS** (Apple Silicon) | M1 / M2 / M3 / M4 (`arm64`) | **DMG Installer** | [Download `ZiuroDB-1.0.7-mac-arm64.dmg`](https://github.com/shanikumar001/ziurodb-desktop/releases/download/v1.0.7/ZiuroDB-1.0.7-mac-arm64.dmg) |
-| **macOS** (Apple Silicon) | M1 / M2 / M3 / M4 (`arm64`) | **ZIP Archive** | [Download `ZiuroDB-1.0.7-mac-arm64.zip`](https://github.com/shanikumar001/ziurodb-desktop/releases/download/v1.0.7/ZiuroDB-1.0.7-mac-arm64.zip) |
-| **macOS** (Intel) | Intel 64-bit (`x64`) | **DMG Installer** | [Download `ZiuroDB-1.0.7-mac-x64.dmg`](https://github.com/shanikumar001/ziurodb-desktop/releases/download/v1.0.7/ZiuroDB-1.0.7-mac-x64.dmg) |
-| **macOS** (Intel) | Intel 64-bit (`x64`) | **ZIP Archive** | [Download `ZiuroDB-1.0.7-mac-x64.zip`](https://github.com/shanikumar001/ziurodb-desktop/releases/download/v1.0.7/ZiuroDB-1.0.7-mac-x64.zip) |
-| **Windows** | Windows 10 / 11 (64-bit) | **Setup EXE** | [Download `ZiuroDB-1.0.7-win-x64.exe`](https://github.com/shanikumar001/ziurodb-desktop/releases/download/v1.0.7/ZiuroDB-1.0.7-win-x64.exe) |
-| **Linux** | Universal 64-bit | **AppImage** | [Download `ZiuroDB-1.0.7-linux-x86_64.AppImage`](https://github.com/shanikumar001/ziurodb-desktop/releases/download/v1.0.7/ZiuroDB-1.0.7-linux-x86_64.AppImage) |
-| **Linux** (Debian / Ubuntu) | `amd64` | **DEB Package** | [Download `ZiuroDB-1.0.7-linux-amd64.deb`](https://github.com/shanikumar001/ziurodb-desktop/releases/download/v1.0.7/ZiuroDB-1.0.7-linux-amd64.deb) |
-| **Linux** (Fedora / RHEL) | `x86_64` | **RPM Package** | [Download `ZiuroDB-1.0.7-linux-x86_64.rpm`](https://github.com/shanikumar001/ziurodb-desktop/releases/download/v1.0.7/ZiuroDB-1.0.7-linux-x86_64.rpm) |
+| **macOS** (Apple Silicon) | M1 / M2 / M3 / M4 (`arm64`) | **DMG Installer** | [Download `ZiuroDB-1.0.6-mac-arm64.dmg`](https://github.com/shanikumar001/ziurodb/releases/download/v1.0.7/ZiuroDB-1.0.6-mac-arm64.dmg) |
+| **macOS** (Apple Silicon) | M1 / M2 / M3 / M4 (`arm64`) | **ZIP Archive** | [Download `ZiuroDB-1.0.6-mac-arm64.zip`](https://github.com/shanikumar001/ziurodb/releases/download/v1.0.7/ZiuroDB-1.0.6-mac-arm64.zip) |
+| **macOS** (Intel) | Intel 64-bit (`x64`) | **DMG Installer** | [Download `ZiuroDB-1.0.6-mac-x64.dmg`](https://github.com/shanikumar001/ziurodb/releases/download/v1.0.7/ZiuroDB-1.0.6-mac-x64.dmg) |
+| **macOS** (Intel) | Intel 64-bit (`x64`) | **ZIP Archive** | [Download `ZiuroDB-1.0.6-mac-x64.zip`](https://github.com/shanikumar001/ziurodb/releases/download/v1.0.7/ZiuroDB-1.0.6-mac-x64.zip) |
+| **Windows** | Windows 10 / 11 (64-bit) | **Setup EXE** | [Download `ZiuroDB-1.0.6-win-x64.exe`](https://github.com/shanikumar001/ziurodb/releases/download/v1.0.7/ZiuroDB-1.0.6-win-x64.exe) |
+| **Linux** | Universal 64-bit | **AppImage** | [Download `ZiuroDB-1.0.6-linux-x86_64.AppImage`](https://github.com/shanikumar001/ziurodb/releases/download/v1.0.7/ZiuroDB-1.0.6-linux-x86_64.AppImage) |
+| **Linux** (Debian / Ubuntu) | `amd64` | **DEB Package** | [Download `ZiuroDB-1.0.6-linux-amd64.deb`](https://github.com/shanikumar001/ziurodb/releases/download/v1.0.7/ZiuroDB-1.0.6-linux-amd64.deb) |
+| **Linux** (Fedora / RHEL) | `x86_64` | **RPM Package** | [Download `ZiuroDB-1.0.6-linux-x86_64.rpm`](https://github.com/shanikumar001/ziurodb/releases/download/v1.0.7/ZiuroDB-1.0.6-linux-x86_64.rpm) |
 
-> You can also browse all version tags and source archives on the [GitHub Releases Page](https://github.com/shanikumar001/ziurodb-desktop/releases).
+> You can also browse all version tags and source archives on the [GitHub Releases Page](https://github.com/shanikumar001/ziurodb/releases).
 
 ---
 

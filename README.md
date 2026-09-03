@@ -1,6 +1,6 @@
-# ZiuroDB Desktop
+# ZiuroDB
 
-ZiuroDB Desktop is a modern, high-performance, cross-platform database administration platform designed for connecting, exploring, querying, and managing multiple database engines—including MongoDB, MySQL, PostgreSQL, Redis, and Firebase—from a unified interface.
+ZiuroDB is a modern, high-performance, cross-platform database administration platform designed for connecting, exploring, querying, and managing multiple database engines—including MongoDB, MySQL, PostgreSQL, Redis, and Firebase—from a unified interface.
 
 Built on Electron, React, and TypeScript, ZiuroDB Desktop integrates a native AI Copilot powered directly by Groq LLM engines, a universal query language engine (ZQL), an automated Database-to-REST API generator, and an enterprise-grade dark monochrome interface.
 

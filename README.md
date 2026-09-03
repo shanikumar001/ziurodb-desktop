@@ -1,126 +1,198 @@
-# ZiuroDB
+# ZiuroDB - Universal AI Database Workspace
 
-ZiuroDB is a modern, high-performance, cross-platform database administration platform designed for connecting, exploring, querying, and managing multiple database engines—including MongoDB, MySQL, PostgreSQL, Redis, and Firebase—from a unified interface.
+[![Release](https://img.shields.io/badge/release-v1.0.7-00F5D4.svg?style=flat-square)](https://github.com/shanikumar001/ziurodb-desktop/releases/tag/v1.0.7)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square)](LICENSE)
+[![Platform](https://img.shields.io/badge/platform-macOS%20%7C%20Windows%20%7C%20Linux%20%7C%20Web-blueviolet.svg?style=flat-square)](https://github.com/shanikumar001/ziurodb-desktop/releases)
+[![Node.js](https://img.shields.io/badge/node-%3E%3D20.0.0-green.svg?style=flat-square)](https://nodejs.org)
+[![Electron](https://img.shields.io/badge/electron-v33.2.1-47848F.svg?style=flat-square)](https://www.electronjs.org)
 
-Built on Electron, React, and TypeScript, ZiuroDB Desktop integrates a native AI Copilot powered directly by Groq LLM engines, a universal query language engine (ZQL), an automated Database-to-REST API generator, and an enterprise-grade dark monochrome interface.
-
----
-
-## Release Notes — ZiuroDB Desktop v1.0.1
-
-### Native Ziuro AI Copilot (v2.0)
-- **Direct Groq REST API Integration**: Calls the Groq LLaMA-3-70B engine directly from the application layer, eliminating external proxy latency for sub-second AI responses.
-- **Automated Query Diagnosis & Retry Loop**: Features an automated query execution loop with 5-retry resilience. When a query fails, Ziuro AI analyzes the exact error stack and provides actionable, step-by-step fix recommendations.
-- **Dual Query & Chat Modes**: Toggle between conversational AI assistant mode and strict code output mode for SQL, ZQL, MongoDB aggregation pipelines, and Redis commands.
-- **Session History Persistence**: In-memory session tracking with instant history recall across Query Console tabs.
-
-### Interface & Aesthetics Polish
-- **Ergonomic Copilot Sidebar**: Positioned on the left side of the Query Console for efficient side-by-side query composition and AI assistance.
-- **Monochrome Pure Dark Theme**: High-contrast pure dark interface (`dark:bg-black`) with clean borders, active indicator badges, and optimized contrast.
-- **Toolbar & Header Optimization**: Icon-only toolbar controls and smart connection title truncation to prevent layout overflow on smaller displays.
-
-### Build & Distribution Pipeline
-- Clean release builds compiled for macOS (Apple Silicon and Intel), Windows (Universal, x64, ia32), and Linux (AppImage, DEB, RPM).
-- Automated application bundle updates for macOS distributions.
+> **ZiuroDB** is a modern, high-performance, unified AI database administration workspace and query compilation engine designed to explore, query, design, manage, and convert multiple database engines—including **PostgreSQL**, **MySQL**, **MongoDB**, **Firebase (Cloud Firestore & RTDB)**, **Supabase**, **Redis**, and **Cloudinary**—into secure REST APIs and sub-second intelligent queries.
 
 ---
 
-## Core Features
+## Quick Links & Ecosystem
 
-- **Multi-Database Management**: Connect to MongoDB, MySQL, PostgreSQL, Redis, and Firebase within a single workspace.
-- **Universal Query Console**: Execute raw SQL, NoSQL queries, or ZQL (ZiuroDB Query Language) with sub-millisecond execution and formatted result grids.
-- **Database-to-REST API Engine**: Convert any database collection or table into a secure, RESTful API endpoint with a single click.
-- **Schema Intelligence**: Automatic schema discovery, field type detection, index inspection, and structural visualization.
-- **Local-First Security**: Connection strings, secrets, and credentials are encrypted locally using 256-bit encryption before storage.
-- **Export & Import**: Export query results into JSON, CSV, or raw SQL inserts.
-
----
-
-## Downloads & Installation
-
-ZiuroDB Desktop binaries are available for all major operating systems. Download the latest installer for your system from the [GitHub Releases](https://github.com/shanikumar001/ziurodb-desktop/releases) section.
-
-### Operating System Support
-
-| Operating System | Supported Architecture | Download Formats |
+| Resource | URL | Description |
 | :--- | :--- | :--- |
-| **macOS** | Apple Silicon (M1 / M2 / M3 / M4) & Intel x64 | `.dmg`, `.zip` |
-| **Windows** | Windows 10 & 11 (x64, ia32, Universal) | `.exe` Installer |
-| **Linux** | Ubuntu, Debian, Fedora, RedHat, Arch | `.AppImage`, `.deb`, `.rpm` |
+| **Official Website** | [https://ziurodb.com](https://ziurodb.com) | Official landing page, features overview, and ecosystem portal |
+| **ZiuroDB Lite (Web App)** | [https://lite.ziurodb.com](https://lite.ziurodb.com) | Zero-installation online web client running directly in your browser |
+| **Official Documentation** | [https://docs.ziurodb.com](https://docs.ziurodb.com) | Complete user guides, API references, ZQL specifications, and tutorials |
+| **GitHub Releases** | [GitHub Releases](https://github.com/shanikumar001/ziurodb-desktop/releases) | Official desktop binary downloads for macOS, Windows, and Linux |
+| **Core Engine Repo** | [https://github.com/shanikumar001/ziurodb](https://github.com/shanikumar001/ziurodb) | Core full-stack repository, backend services, and CLI tools |
+
+---
+
+## ZiuroDB Desktop vs. ZiuroDB Lite
+
+ZiuroDB provides two distinct, seamlessly synchronized editions tailored for developers, database engineers, and teams:
+
+```
+┌────────────────────────────────────────────────────────────────────────────────────────┐
+│                                    ZIURODB PLATFORM                                    │
+├───────────────────────────────────────────┬────────────────────────────────────────────┤
+│             ZIURODB DESKTOP               │                ZIURODB LITE                │
+│       (Native Cross-Platform App)         │         (Zero-Install Browser App)         │
+├───────────────────────────────────────────┼────────────────────────────────────────────┤
+│ • Native Electron 33 runtime              │ • Instant access at lite.ziurodb.com       │
+│ • Direct native DB driver bridges         │ • Runs in any modern browser               │
+│ • Local storage pools & media server      │ • Zero software download required          │
+│ • Offline SQLite and local disk files     │ • Connects to cloud and hosted DBs         │
+│ • Local AES-256 encrypted credential store│ • Connects to localhost DBs via Local Agent│
+│ • Auto-update engine (macOS, Win, Linux)  │ • Always up-to-date automatically          │
+└───────────────────────────────────────────┴────────────────────────────────────────────┘
+```
+
+### ZiuroDB Desktop
+**ZiuroDB Desktop** is a native, heavyweight desktop application built on Electron 33, React 18, and TypeScript. It includes direct database driver socket bridges, offline SQLite support, local storage node allocation, an embedded HTTP media streaming server (`http://localhost:19876`), and local AES-256 encrypted credentials storage (`electron-store`).
+
+### ZiuroDB Lite
+**ZiuroDB Lite** ([lite.ziurodb.com](https://lite.ziurodb.com)) is the official, zero-installation browser web client for ZiuroDB. It allows developers to connect, explore, query, and manage cloud-hosted databases (MongoDB Atlas, Supabase, Neon, AWS RDS, PlanetScale, Firebase) or local databases (via the **ZiuroDB Local Agent tunnel**) directly inside any web browser on any machine.
+
+---
+
+## Key Features
+
+### 1. Universal Multi-Database Management
+- Connect to **PostgreSQL**, **MySQL**, **MongoDB**, **Firebase (Firestore & Realtime Database)**, **Supabase**, **Redis**, and **Cloudinary** from a single workspace.
+- Seamlessly explore database schemas, tables, collections, document trees, indexes, and constraints.
+- Inline data editor: Edit table rows and NoSQL documents directly in the interactive data grid.
+
+### 2. Ziuro-AI & Schema Intelligence Knowledge Graph
+- **Sub-Second AI Query Generation:** Trims prompt context by **99.5%** (~180 tokens vs. ~38,000 tokens) using 1-hop sub-graph extraction for response times under **500 milliseconds**.
+- **Deep Hierarchical Schema Inference:** Recursively inspects nested sub-documents and arrays of objects (e.g. `students.marks: [{ subject, mark }]`) to build clean prototype schemas with MongoDB `$unwind`/`$group` guardrails.
+- **Persistent Schema Memory & Cache:** Retains hierarchical database knowledge (`Connection -> Database -> Collection/Table -> Fields`) across sessions with incremental delta merging.
+- **7 Automated Schema Health Rules:** Evaluates missing indexes on foreign keys, wide tables, circular references, and deep NoSQL nesting to generate a 0–100 Schema Health Score.
+
+### 3. Universal Ziuro Query Language (ZQL)
+- Query any database using a standardized hierarchical model: `Database -> Tree (Table/Collection) -> Branch (Row/Document) -> Leaf (Field/Value)`.
+- Compiles ZQL AST statements into optimized native SQL dialects (`SELECT`, `INSERT`, `UPDATE`) or MongoDB BSON pipelines (`find`, `aggregate`, `updateOne`).
+- Interactive Live Playground with multi-dialect transpilation.
+
+### 4. Instant Database-to-REST API Engine v2.0
+- Convert any database connection into a high-performance REST API with clean JSON document formatting:
+  - `POST /api/v1/public/query` — Single query execution with auto-parsed data types.
+  - `POST /api/v1/public/batch` — Concurrent execution of up to 20 queries with unique ID mapping.
+  - `POST /api/v1/public/transaction` — Multi-query atomic transactions with automated rollback on failure.
+
+### 5. Monaco Query Console
+- Full-featured SQL and NoSQL query editor powered by the industry-standard Monaco Editor.
+- Multi-query execution tabs with individual execution time and row metadata.
+- Syntax highlighting, auto-formatting (`Shift+Option+F` or `Shift+Alt+F`), bracket matching, and keyboard shortcut execution (`Cmd+Enter` / `Ctrl+Enter`).
+
+### 6. Secure Reverse WebSocket Local Agent
+- Connect databases on `localhost` or behind private VPNs/firewalls to ZiuroDB Cloud or ZiuroDB Lite.
+- Uses reverse WebSockets (Socket.io) with one-time token authentication.
+- Zero inbound firewall ports required; database credentials never leave your local machine memory.
+
+### 7. Decentralized Storage Pool & Peer-to-Peer Cloud
+- Share unused disk space to earn passive income (Rs. 2.40/GB/month) with AES-256-GCM encrypted chunks.
+- Deploy managed cloud databases with 3x fault-tolerant replication across storage provider nodes.
+- Built-in media library with local asset streaming HTTP server on port `19876`.
+
+---
+
+## Release Notes — ZiuroDB v1.0.7 (Latest Update)
+
+### What is New in v1.0.7:
+- **Deep Hierarchical Schema Intelligence:** Added recursive inspection for complex nested documents and arrays of objects in MongoDB, eliminating aggregation crashes.
+- **Persistent AI Schema Memory & Settings Management:** Added a dedicated AI Schema Memory Cache Manager in Settings to inspect cached trees, re-sync schemas, and manage cache sizes per connection.
+- **ZQL Direct Script Execution Fallback:** Added native fallback support for complex multi-line data generation scripts with `const`, `for` loops, and `insertMany`.
+- **Electron 33 & Build Optimizations:** Upgraded to Electron 33.2.1 with updated native module rebuilds for macOS (Apple Silicon `arm64` and Intel `x64`), Windows (`x64`), and Linux (`AppImage`, `deb`, `rpm`).
+- **Enhanced Auto-Updater Integration:** Seamless auto-update verification and blockmap generation for macOS, Windows, and Linux releases.
+
+---
+
+## Downloads & Installation (v1.0.7)
+
+ZiuroDB Desktop binaries are available for all major operating systems. Download the installer for your system below:
+
+### Direct Download Links (v1.0.7 Release)
+
+| Operating System | Architecture | Package Format | Direct Download Link |
+| :--- | :--- | :--- | :--- |
+| **macOS** (Apple Silicon) | M1 / M2 / M3 / M4 (`arm64`) | **DMG Installer** | [Download `ZiuroDB-1.0.7-mac-arm64.dmg`](https://github.com/shanikumar001/ziurodb-desktop/releases/download/v1.0.7/ZiuroDB-1.0.7-mac-arm64.dmg) |
+| **macOS** (Apple Silicon) | M1 / M2 / M3 / M4 (`arm64`) | **ZIP Archive** | [Download `ZiuroDB-1.0.7-mac-arm64.zip`](https://github.com/shanikumar001/ziurodb-desktop/releases/download/v1.0.7/ZiuroDB-1.0.7-mac-arm64.zip) |
+| **macOS** (Intel) | Intel 64-bit (`x64`) | **DMG Installer** | [Download `ZiuroDB-1.0.7-mac-x64.dmg`](https://github.com/shanikumar001/ziurodb-desktop/releases/download/v1.0.7/ZiuroDB-1.0.7-mac-x64.dmg) |
+| **macOS** (Intel) | Intel 64-bit (`x64`) | **ZIP Archive** | [Download `ZiuroDB-1.0.7-mac-x64.zip`](https://github.com/shanikumar001/ziurodb-desktop/releases/download/v1.0.7/ZiuroDB-1.0.7-mac-x64.zip) |
+| **Windows** | Windows 10 / 11 (64-bit) | **Setup EXE** | [Download `ZiuroDB-1.0.7-win-x64.exe`](https://github.com/shanikumar001/ziurodb-desktop/releases/download/v1.0.7/ZiuroDB-1.0.7-win-x64.exe) |
+| **Linux** | Universal 64-bit | **AppImage** | [Download `ZiuroDB-1.0.7-linux-x86_64.AppImage`](https://github.com/shanikumar001/ziurodb-desktop/releases/download/v1.0.7/ZiuroDB-1.0.7-linux-x86_64.AppImage) |
+| **Linux** (Debian / Ubuntu) | `amd64` | **DEB Package** | [Download `ZiuroDB-1.0.7-linux-amd64.deb`](https://github.com/shanikumar001/ziurodb-desktop/releases/download/v1.0.7/ZiuroDB-1.0.7-linux-amd64.deb) |
+| **Linux** (Fedora / RHEL) | `x86_64` | **RPM Package** | [Download `ZiuroDB-1.0.7-linux-x86_64.rpm`](https://github.com/shanikumar001/ziurodb-desktop/releases/download/v1.0.7/ZiuroDB-1.0.7-linux-x86_64.rpm) |
+
+> You can also browse all version tags and source archives on the [GitHub Releases Page](https://github.com/shanikumar001/ziurodb-desktop/releases).
+
+---
 
 ### Installation Instructions
 
-#### macOS
-1. Download the `.dmg` file matching your CPU architecture (Apple Silicon or Intel).
-2. Double-click the downloaded `.dmg` file.
-3. Drag **ZiuroDB Desktop** into your **Applications** folder.
-4. Launch ZiuroDB Desktop from Launchpad or Spotlight.
+#### macOS Installation
+1. Download the `.dmg` file matching your Mac architecture (**Apple Silicon** for M1/M2/M3/M4 or **Intel** for older Macs).
+2. Double-click the downloaded `.dmg` file to mount it.
+3. Drag the **ZiuroDB** icon into your **Applications** folder.
+4. Launch ZiuroDB from Spotlight or Launchpad.
 
-#### Windows
-1. Download the `ZiuroDB-Desktop-Setup-1.0.1.exe` installer.
-2. Run the executable and follow the setup wizard.
-3. Launch ZiuroDB Desktop from the Start Menu or Desktop shortcut.
+#### Windows Installation
+1. Download `ZiuroDB-1.0.7-win-x64.exe`.
+2. Double-click the installer and follow the setup wizard.
+3. Launch ZiuroDB from your Desktop shortcut or Start Menu.
 
-#### Linux
-- **AppImage**: Grant execution permissions (`chmod +x ZiuroDB-Desktop-1.0.1.AppImage`) and run directly.
-- **Debian / Ubuntu**: Install via `sudo dpkg -i ziurodb-desktop_1.0.1_amd64.deb`.
-- **Fedora / RedHat**: Install via `sudo rpm -i ziurodb-desktop-1.0.1.x86_64.rpm`.
+#### Linux Installation
 
----
+**Using AppImage (Universal):**
+```bash
+# 1. Make the AppImage executable
+chmod +x ZiuroDB-1.0.7-linux-x86_64.AppImage
 
-## Getting Started
+# 2. Run ZiuroDB
+./ZiuroDB-1.0.7-linux-x86_64.AppImage
+```
 
-### 1. Adding a Database Connection
-1. Launch ZiuroDB Desktop.
-2. Click **New Connection** on the sidebar.
-3. Select your database engine (MongoDB, MySQL, PostgreSQL, Redis, or Firebase).
-4. Enter your connection URI or host credentials.
-5. Click **Test Connection** and save.
+**Using Debian / Ubuntu (.deb):**
+```bash
+sudo dpkg -i ZiuroDB-1.0.7-linux-amd64.deb
+sudo apt-get install -f # Fix any missing dependencies
+```
 
-### 2. Using the Query Console & ZQL
-- Open any connection from the left navigation panel.
-- Select the **Query Console**.
-- Choose your preferred query syntax (SQL, native MongoDB, or ZQL).
-- Press `Ctrl + Enter` (or `Cmd + Enter` on macOS) to execute.
-
-### 3. Using Ziuro AI Copilot
-- Open the AI Copilot sidebar on the left side of the Query Console.
-- Type natural language queries such as *"Find all active users created in the last 7 days"* or *"Optimize this SQL join query"*.
-- Click **Apply Code** to inject the AI-generated query directly into your console.
+**Using Fedora / RHEL / CentOS (.rpm):**
+```bash
+sudo rpm -i ZiuroDB-1.0.7-linux-x86_64.rpm
+```
 
 ---
 
-## Documentation
+## In-Depth Documentation
 
-Full technical documentation, architecture specs, and reference guides are included in the repository:
+Detailed technical guides and architectural specifications are located in the `docs/` directory:
 
-- [ZQL Command Reference](docs/zql-command.md) — Complete guide to ZiuroDB Query Language syntax and command structures.
-- [API Documentation](docs/API.md) — Comprehensive API endpoint specifications and integration guides.
-- [Data Storage Architecture](docs/DATA_STORAGE_ARCHITECTURE.md) — Technical overview of schema modeling and encryption.
-- [AI Flow & Copilot Engine](docs/ai-flow.md) — Architecture of the Groq LLM integration and diagnostic loop.
-- [Schema Intelligence Engine](docs/schema-intelligence.md) — Deep dive into auto-schema detection and indexing.
-- [ZiuroDB AI Agent Specification](docs/AGENT.md) — Technical specification for AI agent interactions and tools.
-- [Package Architecture](docs/ziurodb-package.md) — Detailed breakdown of package dependencies and build manifests.
+- [ZQL Command Reference](docs/zql-command.md) — Complete reference for the ZiuroDB Query Language syntax and operations.
+- [API Engine Documentation](docs/API.md) — Specifications for the Database-to-REST API Engine (`/query`, `/batch`, `/transaction`).
+- [Schema Intelligence Engine](docs/schema-intelligence.md) — Technical deep dive into the Knowledge Graph and health score analyzer.
+- [AI Flow Architecture](docs/ai-flow.md) — End-to-end documentation of Ziuro-AI, prompt trimming, and Groq LLM integration.
+- [Data Storage Architecture](docs/DATA_STORAGE_ARCHITECTURE.md) — Storage mechanics of schema graphs and desktop storage pools.
+- [Local Agent Guide](docs/AGENT.md) — Guide on deploying the standalone reverse WebSocket agent.
+- [Package Guide](docs/ziurodb-package.md) — Complete API reference for the `ziurodb` universal JavaScript/TypeScript SDK.
 
 ---
 
 ## System Requirements
 
-- **macOS**: macOS 10.15 (Catalina) or later.
-- **Windows**: Windows 10 (64-bit) or later.
-- **Linux**: Kernel 5.4+ with glibc 2.28+.
-- **Hardware**: Minimum 4 GB RAM (8 GB recommended), 500 MB free disk space.
+- **macOS:** macOS 10.15 (Catalina) or later (Apple Silicon or Intel).
+- **Windows:** Windows 10 or Windows 11 (64-bit).
+- **Linux:** Ubuntu 20.04+, Debian 11+, Fedora 36+, or any modern Linux distribution with glibc 2.28+.
+- **Hardware:** 4 GB RAM minimum (8 GB recommended), 500 MB free storage space.
 
 ---
 
-## Community & Resources
+## Community & Support
 
-- **Source Code & Core Engine**: [https://github.com/shanikumar001/ziurodb](https://github.com/shanikumar001/ziurodb)
-- **Desktop Releases Repository**: [https://github.com/shanikumar001/ziurodb-desktop](https://github.com/shanikumar001/ziurodb-desktop)
-- **Official Website**: [https://ziurodb.com](https://ziurodb.com)
+- **Official Website:** [https://ziurodb.com](https://ziurodb.com)
+- **Web App (ZiuroDB Lite):** [https://lite.ziurodb.com](https://lite.ziurodb.com)
+- **Documentation:** [https://docs.ziurodb.com](https://docs.ziurodb.com)
+- **Issue Tracker & Feature Requests:** [https://github.com/shanikumar001/ziurodb/issues](https://github.com/shanikumar001/ziurodb/issues)
+- **Desktop Releases:** [https://github.com/shanikumar001/ziurodb-desktop/releases](https://github.com/shanikumar001/ziurodb-desktop/releases)
 
 ---
 
 ## License
 
-ZiuroDB Desktop is licensed under the [MIT License](LICENSE).
+ZiuroDB is open-source software licensed under the [MIT License](LICENSE).

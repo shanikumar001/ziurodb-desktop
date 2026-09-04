@@ -1,11 +1,5 @@
 # ZiuroDB - Universal AI Database Workspace
 
-[![Release](https://img.shields.io/badge/release-v1.0.7-00F5D4.svg?style=flat-square)](https://github.com/shanikumar001/ziurodb-desktop/releases/tag/v1.0.7)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square)](LICENSE)
-[![Platform](https://img.shields.io/badge/platform-macOS%20%7C%20Windows%20%7C%20Linux%20%7C%20Web-blueviolet.svg?style=flat-square)](https://github.com/shanikumar001/ziurodb-desktop/releases)
-[![Node.js](https://img.shields.io/badge/node-%3E%3D20.0.0-green.svg?style=flat-square)](https://nodejs.org)
-[![Electron](https://img.shields.io/badge/electron-v33.2.1-47848F.svg?style=flat-square)](https://www.electronjs.org)
-
 > **ZiuroDB** is a modern, high-performance, unified AI database administration workspace and query compilation engine designed to explore, query, design, manage, and convert multiple database engines—including **PostgreSQL**, **MySQL**, **MongoDB**, **Firebase (Cloud Firestore & RTDB)**, **Supabase**, **Redis**, and **Cloudinary**—into secure REST APIs and sub-second intelligent queries.
 
 ---
